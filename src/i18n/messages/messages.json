@@ -1,0 +1,117 @@
+[
+  {
+    "id": "menu.list.ui",
+    "defaultMessage": "User Interface",
+    "filepath": "src/common/leftmenu/CategoryListItems.js"
+  },
+  {
+    "id": "menu.list.api",
+    "defaultMessage": "API Development",
+    "filepath": "src/common/leftmenu/CategoryListItems.js"
+  },
+  {
+    "id": "menu.list.db",
+    "defaultMessage": "Database",
+    "filepath": "src/common/leftmenu/CategoryListItems.js"
+  },
+  {
+    "id": "menu.list.devop",
+    "defaultMessage": "Dev Ops",
+    "filepath": "src/common/leftmenu/CategoryListItems.js"
+  },
+  {
+    "id": "menu.list.settings",
+    "defaultMessage": "Settings",
+    "filepath": "src/common/leftmenu/FooterListItems.js"
+  },
+  {
+    "id": "menu.list.feedback",
+    "defaultMessage": "Send Feedback",
+    "filepath": "src/common/leftmenu/FooterListItems.js"
+  },
+  {
+    "id": "menu.list.help",
+    "defaultMessage": "Help",
+    "filepath": "src/common/leftmenu/FooterListItems.js"
+  },
+  {
+    "id": "menu.list.bugs",
+    "defaultMessage": "Report Bugs",
+    "filepath": "src/common/leftmenu/FooterListItems.js"
+  },
+  {
+    "id": "menu.list.history",
+    "defaultMessage": "History",
+    "filepath": "src/common/leftmenu/LibraryListItems.js"
+  },
+  {
+    "id": "menu.list.watchlist",
+    "defaultMessage": "Watch List",
+    "filepath": "src/common/leftmenu/LibraryListItems.js"
+  },
+  {
+    "id": "menu.list.liked",
+    "defaultMessage": "Liked Videos",
+    "filepath": "src/common/leftmenu/LibraryListItems.js"
+  },
+  {
+    "id": "menu.list.playlist",
+    "defaultMessage": "Playlists",
+    "filepath": "src/common/leftmenu/LibraryListItems.js"
+  },
+  {
+    "id": "menu.list.home",
+    "defaultMessage": "Home",
+    "filepath": "src/common/leftmenu/MainListItems.js"
+  },
+  {
+    "id": "menu.list.trending",
+    "defaultMessage": "Trending",
+    "filepath": "src/common/leftmenu/MainListItems.js"
+  },
+  {
+    "id": "menu.list.subscriptions",
+    "defaultMessage": "Subscriptions",
+    "filepath": "src/common/leftmenu/MainListItems.js"
+  },
+  {
+    "id": "menu.list.subheader.library",
+    "defaultMessage": "LIBRARY",
+    "filepath": "src/common/LeftMenuDrawer.js"
+  },
+  {
+    "id": "menu.list.subheader.category",
+    "defaultMessage": "CATEGORIES",
+    "filepath": "src/common/LeftMenuDrawer.js"
+  },
+  {
+    "id": "menu.title.sm",
+    "defaultMessage": "MUI Marketplace",
+    "filepath": "src/common/TopAppBar.js"
+  },
+  {
+    "id": "menu.title.xs",
+    "defaultMessage": "MUI",
+    "filepath": "src/common/TopAppBar.js"
+  },
+  {
+    "id": "menu.signout",
+    "defaultMessage": "Sign Out",
+    "filepath": "src/common/TopAppBar.js"
+  },
+  {
+    "id": "menu.signin",
+    "defaultMessage": "Sign In",
+    "filepath": "src/common/TopAppBar.js"
+  },
+  {
+    "id": "menu.signup",
+    "defaultMessage": "Sign Up",
+    "filepath": "src/common/TopAppBar.js"
+  },
+  {
+    "id": "dialog.language.select",
+    "defaultMessage": "Select Language",
+    "filepath": "src/common/TopAppBar.js"
+  }
+]
