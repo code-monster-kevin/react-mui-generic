@@ -8,12 +8,10 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
-import SignInIcon from '@material-ui/icons/Input';
-import SignUpIcon from '@material-ui/icons/AssignmentInd';
-import SignOutIcon from '@material-ui/icons/ExitToApp';
 import { Link, withRouter } from 'react-router-dom';
 import Popper from '@material-ui/core/Popper';
 import Grow from '@material-ui/core/Grow';
@@ -26,6 +24,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Avatar from '@material-ui/core/Avatar';
 import SearchIcon from '@material-ui/icons/Search';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import FlagUSIcon from '../assets/flags/FlagUSIcon';
 import FlagCNIcon from '../assets/flags/FlagCNIcon';
 import RemyAvatar from '../assets/remy.jpg';
@@ -81,7 +80,9 @@ const styles = theme => ({
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
     marginLeft: 0,
+    marginTop: 8,
     width: '100%',
+    height: '80%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing.unit,
       width: 'auto'
@@ -130,6 +131,13 @@ class TopAppBar extends Component {
       localeOpen: false
     };
   }
+
+  handleSearch = event => {
+    console.log(event);
+    if (event.key === 'Enter') {
+      console.log('search', event.target.value);
+    }
+  };
 
   handleLocaleOpen = () => {
     this.setState({ localeOpen: true });
@@ -197,85 +205,82 @@ class TopAppBar extends Component {
                         root: classes.inputRoot,
                         input: classes.inputInput
                       }}
+                      onChange={this.handleSearch}
                     />
                   </div>
+                  <IconButton
+                    buttonRef={node => {
+                      this.anchorEl = node;
+                    }}
+                    onClick={this.handleLocaleOpen}
+                  >
+                    {this.state.locale === 'zh' ? <FlagCNIcon /> : <FlagUSIcon />}
+                  </IconButton>
+                  <Popper
+                    open={this.state.localeOpen}
+                    anchorEl={this.anchorEl}
+                    transition
+                    disablePortal
+                    style={{ zIndex: '100' }}
+                  >
+                    {({ TransitionProps, placement }) => (
+                      <Grow
+                        {...TransitionProps}
+                        id="menu-list"
+                        style={{
+                          transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'
+                        }}
+                      >
+                        <Paper>
+                          <ClickAwayListener onClickAway={this.handleLocaleClose}>
+                            <List
+                              subheader={
+                                <ListSubheader>
+                                  {formatMessage(messages.dialogLanguageSelect)}
+                                </ListSubheader>
+                              }
+                            >
+                              <ListItem
+                                button
+                                selected={this.state.locale === 'en'}
+                                onClick={event => this.handleListItemClick(event, 'en')}
+                              >
+                                <ListItemIcon>
+                                  <FlagUSIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="English" />
+                              </ListItem>
+                              <ListItem
+                                button
+                                selected={this.state.locale === 'zh'}
+                                onClick={event => this.handleListItemClick(event, 'zh')}
+                              >
+                                <ListItemIcon>
+                                  <FlagCNIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="中文" />
+                              </ListItem>
+                            </List>
+                          </ClickAwayListener>
+                        </Paper>
+                      </Grow>
+                    )}
+                  </Popper>
                 </Hidden>
-                <IconButton
-                  buttonRef={node => {
-                    this.anchorEl = node;
-                  }}
-                  onClick={this.handleLocaleOpen}
-                >
-                  {this.state.locale === 'zh' ? <FlagCNIcon /> : <FlagUSIcon />}
-                </IconButton>
-                <Popper
-                  open={this.state.localeOpen}
-                  anchorEl={this.anchorEl}
-                  transition
-                  disablePortal
-                  style={{ zIndex: '100' }}
-                >
-                  {({ TransitionProps, placement }) => (
-                    <Grow
-                      {...TransitionProps}
-                      id="menu-list"
-                      style={{
-                        transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'
-                      }}
-                    >
-                      <Paper>
-                        <ClickAwayListener onClickAway={this.handleLocaleClose}>
-                          <List
-                            subheader={
-                              <ListSubheader>
-                                {formatMessage(messages.dialogLanguageSelect)}
-                              </ListSubheader>
-                            }
-                          >
-                            <ListItem
-                              button
-                              selected={this.state.locale === 'en'}
-                              onClick={event => this.handleListItemClick(event, 'en')}
-                            >
-                              <ListItemIcon>
-                                <FlagUSIcon />
-                              </ListItemIcon>
-                              <ListItemText primary="English" />
-                            </ListItem>
-                            <ListItem
-                              button
-                              selected={this.state.locale === 'zh'}
-                              onClick={event => this.handleListItemClick(event, 'zh')}
-                            >
-                              <ListItemIcon>
-                                <FlagCNIcon />
-                              </ListItemIcon>
-                              <ListItemText primary="中文" />
-                            </ListItem>
-                          </List>
-                        </ClickAwayListener>
-                      </Paper>
-                    </Grow>
-                  )}
-                </Popper>
                 {this.props.authenticated ? (
                   <span style={{ display: 'flex' }}>
                     <Hidden xsDown>
+                      <IconButton color="inherit">
+                        <Badge className={classes.margin} badgeContent={17} color="secondary">
+                          <NotificationsIcon />
+                        </Badge>
+                      </IconButton>
                       <Button
                         style={isActive(history, '/signout')}
                         onClick={() => this.props.signOut()}
                       >
                         {formatMessage(messages.menuSignOut)}
                       </Button>
-                    </Hidden>
-                    <Hidden smUp>
-                      <IconButton
-                        aria-label="ExitToApp"
-                        style={isActive(history, '/signout')}
-                        onClick={() => this.props.signOut()}
-                      >
-                        <SignOutIcon />
-                      </IconButton>
                     </Hidden>
                     <Avatar alt="Remy Sharp" src={RemyAvatar} />
                   </span>
@@ -289,15 +294,6 @@ class TopAppBar extends Component {
                         {formatMessage(messages.menuSignUp)}
                       </Button>
                     </Hidden>
-                    <Hidden smUp>
-                      <IconButton
-                        aria-label="AssignmentInd"
-                        style={isActive(history, '/signup')}
-                        onClick={() => this.props.signUp()}
-                      >
-                        <SignUpIcon />
-                      </IconButton>
-                    </Hidden>
                     <Hidden xsDown>
                       <Button
                         style={isActive(history, '/signin')}
@@ -305,15 +301,6 @@ class TopAppBar extends Component {
                       >
                         {formatMessage(messages.menuSignIn)}
                       </Button>
-                    </Hidden>
-                    <Hidden smUp>
-                      <IconButton
-                        aria-label="Input"
-                        style={isActive(history, '/signin')}
-                        onClick={() => this.props.signIn()}
-                      >
-                        <SignInIcon />
-                      </IconButton>
                     </Hidden>
                   </span>
                 )}
