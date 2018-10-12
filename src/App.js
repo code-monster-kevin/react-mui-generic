@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import TopAppBar from './common/TopAppBar';
 import LeftMenuDrawer from './common/LeftMenuDrawer';
-import Footer from './common/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -41,7 +40,6 @@ class App extends Component {
             handleMenuClick={this.handleMenuClick}
           />
           <LeftMenuDrawer open={this.state.leftMenuOpen} handleMenuClick={this.handleMenuClick} />
-          <Footer />
         </div>
       </BrowserRouter>
     );
