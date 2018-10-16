@@ -25,7 +25,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Avatar from '@material-ui/core/Avatar';
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import FlagUSIcon from '../assets/flags/FlagUSIcon';
+import FlagUKIcon from '../assets/flags/FlagUKIcon';
 import FlagCNIcon from '../assets/flags/FlagCNIcon';
 import RemyAvatar from '../assets/remy.jpg';
 import VucadiIcon from '../assets/vucadi_logo_128.png';
@@ -214,7 +214,7 @@ class TopAppBar extends Component {
                     }}
                     onClick={this.handleLocaleOpen}
                   >
-                    {this.state.locale === 'zh' ? <FlagCNIcon /> : <FlagUSIcon />}
+                    {this.state.locale === 'zh' ? <FlagCNIcon /> : <FlagUKIcon />}
                   </IconButton>
                   <Popper
                     open={this.state.localeOpen}
@@ -246,7 +246,7 @@ class TopAppBar extends Component {
                                 onClick={event => this.handleListItemClick(event, 'en')}
                               >
                                 <ListItemIcon>
-                                  <FlagUSIcon />
+                                  <FlagUKIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="English" />
                               </ListItem>

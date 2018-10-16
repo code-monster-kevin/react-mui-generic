@@ -7,7 +7,7 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 export default function(props) {
   return (
     <SvgIcon viewBox="0 0 640 480" {...props}>
-      <defs id="defs155">
+      <defs id="flag-us">
         <clipPath id="clipPath4293" clipPathUnits="userSpaceOnUse">
           <rect
             id="rect4295"
