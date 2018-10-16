@@ -1,32 +1,62 @@
 import React from 'react';
 import Slider from 'react-animated-slider';
-import horizontalCss from 'react-animated-slider/build/horizontal.css';
-import Image1 from '../../assets/homeslider/DCdBXcq.jpg';
-import Image2 from '../../assets/homeslider/DvmN8Hx.jpg';
-import Image3 from '../../assets/homeslider/ZXBtVw7.jpg';
+import 'react-animated-slider/build/horizontal.css';
+import 'normalize.css/normalize.css';
+import './slider-animations.css';
+import './slider-styles.css';
+
+const content = [
+	{
+		title: 'Vulputate Mollis Ultricies',
+		description:
+		'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+		button: 'Read More',
+		image: 'https://i.imgur.com/ZXBtVw7.jpg',
+		user: 'Luan Gjokaj',
+		userProfile: 'https://i.imgur.com/JSW6mEk.png'
+	},
+	{
+		title: 'Tortor Dapibus Commodo',
+		description:
+		'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
+		button: 'Discover',
+		image: 'https://i.imgur.com/DCdBXcq.jpg',
+		user: 'Erich Behrens',
+		userProfile: 'https://i.imgur.com/0Clfnu7.png'
+	},
+	{
+		title: 'Phasellus volutpat metus',
+		description:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.',
+		button: 'Buy now',
+		image: 'https://i.imgur.com/DvmN8Hx.jpg',
+		user: 'Bruno Vizovskyy',
+		userProfile: 'https://i.imgur.com/4KeKvtH.png'
+	}
+];
 
 const HomeSlider = () => {
   return (
-    <Slider classNames={horizontalCss}>
-      <div key="1" style={{ background: `url('${Image1}') no-repeat center center` }}>
-        <div className="center">
-          <h2>Slide Title One</h2>
-          <div>Description of Slide One</div>
-          <button>Read More</button>
-        </div>
-      </div>
-      <div key="2" style={{ background: `url('${Image2}') no-repeat center center` }}>
-        <div className="center">
-          <h2>Slide Title Two</h2>
-          <div>Some words here to fill up this space</div>
-        </div>
-      </div>
-      <div key="3" style={{ background: `url('${Image3}') no-repeat center center` }}>
-        <div className="center">
-          <h2>Slide Title Three</h2>
-          <div>Things to say about the slides here</div>
-        </div>
-      </div>
+    <Slider className="slider-wrapper">
+      {content.map((item, index) => (
+				<div
+					key={index}
+					className="slider-content"
+					style={{ background: `url('${item.image}') no-repeat center center` }}
+				>
+					<div className="inner">
+						<h1>{item.title}</h1>
+						<p>{item.description}</p>
+						<button>{item.button}</button>
+					</div>
+					<section>
+						<img src={item.userProfile} alt={item.user} />
+						<span>
+							Posted by <strong>{item.user}</strong>
+						</span>
+					</section>
+				</div>
+			))}
     </Slider>
   );
 };
