@@ -6,8 +6,8 @@ export default function(props) {
     <SvgIcon viewBox="0 0 60 30" {...props}>
       <defs>
         <linearGradient id="a">
-          <stop offset="0" stop-color="#fff" />
-          <stop offset="1" stop-color="#fff" stop-opacity="0" />
+          <stop offset="0" stopColor="#fff" />
+          <stop offset="1" stopColor="#fff" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path d="M.002-.016v30h60v-30z" fill="#00247d" />

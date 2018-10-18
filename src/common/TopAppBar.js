@@ -182,12 +182,12 @@ class TopAppBar extends Component {
               </Link>
             </div>
             <Hidden xsDown>
-              <Typography type="title" color="inherit">
+              <Typography type="h6" color="inherit">
                 {formatMessage(messages.menuTitleSm)}
               </Typography>
             </Hidden>
             <Hidden smUp>
-              <Typography type="title" color="inherit">
+              <Typography type="h6" color="inherit">
                 {formatMessage(messages.menuTitleXs)}
               </Typography>
             </Hidden>
