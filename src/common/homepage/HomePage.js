@@ -2,37 +2,32 @@ import React, { Component } from 'react';
 import HomeSlider from './HomeSlider';
 import BannerLoadingImage from '../../assets/homeslider/bannerloading.jpg';
 
-const defaultcontent = [
-  {
-    title: 'Loading content',
-    description: 'Retrieving data from server. Please stand by...',
-    button: '',
-    image: BannerLoadingImage,
-    user: '',
-    userProfile: ''
-  }
-];
-
 class HomePage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      bannercontent: defaultcontent
+      bannercontent: [],
+      loadingbanner: true
     };
   }
 
   componentDidMount() {
     //simulate loading from external source
     import(`../../content/mainslider.json`)
-      .then(module => this.setState({ bannercontent: module }))
-      .catch(this.setState({ bannercontent: defaultcontent }));
+      .then(module => this.setState({ bannercontent: module, loadingbanner: false }))
+      .catch(this.setState({ bannercontent: [], loadingbanner: true }));
   }
 
   render() {
+    const { loadingbanner, bannercontent } = this.state;
+
     return (
       <div id="homepage">
-        <HomeSlider content={this.state.bannercontent} />
+        { loadingbanner ? 
+        ( <img src={BannerLoadingImage} alt="banner loading" /> ) :
+        ( <HomeSlider content={bannercontent} /> )
+        }
       </div>
     );
   }
