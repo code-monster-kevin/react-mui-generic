@@ -13,8 +13,9 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+    const locale = localStorage.getItem('app.locale');
     //simulate loading from external source
-    import(`../../content/mainslider.json`)
+    import(`../../content/${locale}/mainslider.json`)
       .then(module => this.setState({ bannercontent: module, loadingbanner: false }))
       .catch(this.setState({ bannercontent: [], loadingbanner: true }));
   }
@@ -24,10 +25,11 @@ class HomePage extends Component {
 
     return (
       <div id="homepage">
-        { loadingbanner ? 
-        ( <img src={BannerLoadingImage} alt="banner loading" /> ) :
-        ( <HomeSlider content={bannercontent} /> )
-        }
+        {loadingbanner ? (
+          <img src={BannerLoadingImage} alt="banner loading" />
+        ) : (
+          <HomeSlider content={bannercontent} />
+        )}
       </div>
     );
   }

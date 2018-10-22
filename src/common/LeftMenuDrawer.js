@@ -16,11 +16,29 @@ const messages = defineMessages({
   },
   menuListSubHeaderCategory: {
     id: 'menu.list.subheader.category',
-    defaultMessage: 'CATEGORIES'
+    defaultMessage: 'BY JOB CATEGORY'
   }
 });
 
 class LeftMenuDrawer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      jobcategorieslist: [],
+      loadingbanner: true
+    };
+  }
+
+  componentDidMount() {
+    const locale = localStorage.getItem('app.locale');
+
+    //simulate loading from external source
+    import(`../content/${locale}/menujobcategory.json`)
+      .then(module => this.setState({ jobcategorieslist: module }))
+      .catch(this.setState({ jobcategorieslist: [] }));
+  }
+
   render() {
     const {
       intl: { formatMessage }
@@ -49,17 +67,21 @@ class LeftMenuDrawer extends Component {
             >
               <LibraryListItems />
             </List>
-            <Divider />
-            <List
-              component="nav"
-              subheader={
-                <ListSubheader component="div">
-                  {formatMessage(messages.menuListSubHeaderCategory)}
-                </ListSubheader>
-              }
-            >
-              <CategoryListItems />
-            </List>
+            {this.state.jobcategorieslist && (
+              <div>
+                <Divider />
+                <List
+                  component="nav"
+                  subheader={
+                    <ListSubheader component="div">
+                      {formatMessage(messages.menuListSubHeaderCategory)}
+                    </ListSubheader>
+                  }
+                >
+                  <CategoryListItems listitems={this.state.jobcategorieslist} />
+                </List>
+              </div>
+            )}
             <Divider />
             <List>
               <FooterListItems />
