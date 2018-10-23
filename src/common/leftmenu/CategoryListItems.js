@@ -9,7 +9,7 @@ class CategoryListItems extends Component {
     return (
       <div>
         {this.props.listitems.map((item, index) => (
-          <ListItem button>
+          <ListItem key={item.key} button>
             <ListItemIcon>
               <GroupIcon />
             </ListItemIcon>

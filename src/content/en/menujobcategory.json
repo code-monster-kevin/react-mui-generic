@@ -1,26 +1,50 @@
 [
   {
-    "title": "Database Administrator"
+    "key": "1",
+    "title": "Database Administrator",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/dba.jpg",
+    "description": "Tutorials about storing and organize data, include capacity planning, backup and data recovery"
   },
   {
-    "title": "Data Engineer"
+    "key": "2",
+    "title": "Data Engineer",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/datae.jpg",
+    "description": "Videos on design, build, integrate data from various resources, and manage big data"
   },
   {
-    "title": "Quality Analyst"
+    "key": "3",
+    "title": "Quality Analyst",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/qa.jpg",
+    "description": "Learn about the principles and practices of software quality assurance throughout the software development life cycle"
   },
   {
-    "title": "Security Engineer"
+    "key": "4",
+    "title": "Security Engineer",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sec.jpg",
+    "description": "Videos about specialized field of engineering that focuses on the security aspects in the design of systems"
   },
   {
-    "title": "Software Developer"
+    "key": "5",
+    "title": "Software Developer",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sd.jpg",
+    "description": "Videos on the design, development and maintenance of software systems"
   },
   {
-    "title": "Solutions Architect"
+    "key": "6",
+    "title": "Solutions Architect",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sa.jpg",
+    "description": "Mapping the business requirements in line with enterprise architectural plan"
   },
   {
-    "title": "Systems Administrator"
+    "key": "7",
+    "title": "Systems Administrator",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sysa.jpg",
+    "description": "Maintain the essentials such as operating systems, business applications, both hardware and software"
   },
   {
-    "title": "UI/UX Designer"
+    "key": "8",
+    "title": "UI/UX Designer",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/uxd.jpg",
+    "description": "Illustrating design ideas using storyboards, process flows and sitemaps"
   }
 ]

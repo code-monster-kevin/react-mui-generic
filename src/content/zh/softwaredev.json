@@ -1,0 +1,42 @@
+[
+  {
+    "key": "GhQdlIFylQ8",
+    "image": "https://img.youtube.com/vi/GhQdlIFylQ8/mqdefault.jpg",
+    "title": "C# Tutorial",
+    "description": "Full C# Course for Beginners",
+    "url": "https://www.youtube.com/watch?v=GhQdlIFylQ8",
+    "author": "freeCodeCamp.org"
+  },
+  {
+    "key": "7YcW25PHnAA",
+    "image": "https://img.youtube.com/vi/7YcW25PHnAA/mqdefault.jpg",
+    "title": "REST API",
+    "description": "concepts and examples",
+    "url": "https://www.youtube.com/watch?v=7YcW25PHnAA",
+    "author": "Web Concepts"
+  },
+  {
+    "key": "YCcAE2SCQ6k",
+    "image": "https://img.youtube.com/vi/YCcAE2SCQ6k/mqdefault.jpg",
+    "title": "Intro to REST",
+    "description": "Introduction to REST API",
+    "url": "https://www.youtube.com/watch?v=YCcAE2SCQ6k",
+    "author": "Joe Gregorio"
+  },
+  {
+    "key": "wI1CWzNtE-M",
+    "image": "https://img.youtube.com/vi/wI1CWzNtE-M/mqdefault.jpg",
+    "title": "JSON Crash Course",
+    "description": "Crash Course in Javascript Object Notation",
+    "url": "https://www.youtube.com/watch?v=wI1CWzNtE-M",
+    "author": "Traversy Media"
+  },
+  {
+    "key": "eB9Fq9I5ocs",
+    "image": "https://img.youtube.com/vi/eB9Fq9I5ocs/mqdefault.jpg",
+    "title": "RESTful API",
+    "description": "Develop From Scratch Using Node, Express and MongoDB",
+    "url": "https://www.youtube.com/watch?v=eB9Fq9I5ocs",
+    "author": "Traversy Media"
+  }
+]

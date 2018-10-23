@@ -1,26 +1,50 @@
 [
   {
-    "title": "数据库管理员"
+    "key": "1",
+    "title": "数据库管理员",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/dba.jpg",
+    "description": "Tutorials about storing and organize data, include capacity planning, backup and data recovery"
   },
   {
-    "title": "数据工程师"
+    "key": "2",
+    "title": "数据工程师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/datae.jpg",
+    "description": "Videos on design, build, integrate data from various resources, and manage big data"
   },
   {
-    "title": "软件质量分析师"
+    "key": "3",
+    "title": "软件质量分析师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/qa.jpg",
+    "description": "Learn about the principles and practices of software quality assurance throughout the software development life cycle"
   },
   {
-    "title": "软件安全工程师"
+    "key": "4",
+    "title": "软件安全工程师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sec.jpg",
+    "description": "Videos about specialized field of engineering that focuses on the security aspects in the design of systems"
   },
   {
-    "title": "软件开发师"
+    "key": "5",
+    "title": "软件开发师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sd.jpg",
+    "description": "Videos on the design, development and maintenance of software systems"
   },
   {
-    "title": "软件架构师"
+    "key": "6",
+    "title": "软件架构师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sa.jpg",
+    "description": "Mapping the business requirements in line with enterprise architectural plan"
   },
   {
-    "title": "系统管理员"
+    "key": "7",
+    "title": "系统管理员",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/sysa.jpg",
+    "description": "Maintain the essentials such as operating systems, business applications, both hardware and software"
   },
   {
-    "title": "用户界面设计师"
+    "key": "8",
+    "title": "用户界面设计师",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vucadi-assets/uxd.jpg",
+    "description": "Illustrating design ideas using storyboards, process flows and sitemaps"
   }
 ]
