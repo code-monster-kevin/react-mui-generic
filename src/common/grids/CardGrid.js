@@ -26,30 +26,32 @@ class CardGrid extends Component {
     const { classes, content } = this.props;
 
     return (
-      <Grid container spacing={40} className={classes.cardGrid}>
-        {content.map(item => (
-          <Grid item key={item.key} xs={12} md={6}>
-            <Card className={classes.card}>
-              <div className={classes.cardDetails}>
-                <CardContent>
-                  <Typography component="h2" variant="h5">
-                    {item.title}
-                  </Typography>
-                  <Typography variant="subtitle1" paragraph>
-                    {item.description}
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Open video...
-                  </Typography>
-                </CardContent>
-              </div>
-              <Hidden xsDown>
-                <CardMedia className={classes.cardMedia} image={item.image} title={item.title} />
-              </Hidden>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <div className={classes.root}>
+        <Grid container spacing={40} className={classes.cardGrid}>
+          {content.map(item => (
+            <Grid item key={item.key} xs={12} md={6}>
+              <Card className={classes.card}>
+                <div className={classes.cardDetails}>
+                  <CardContent>
+                    <Typography component="h2" variant="h5">
+                      {item.title}
+                    </Typography>
+                    <Typography variant="subtitle1" paragraph>
+                      {item.description}
+                    </Typography>
+                    <Typography variant="subtitle1" color="primary">
+                      Open video...
+                    </Typography>
+                  </CardContent>
+                </div>
+                <Hidden xsDown>
+                  <CardMedia className={classes.cardMedia} image={item.image} title={item.title} />
+                </Hidden>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     );
   }
 }
